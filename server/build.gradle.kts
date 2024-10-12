@@ -1,13 +1,13 @@
 plugins {
-    alias(libs.plugins.kotlinJvm)
+    alias(libs.plugins.kotlin.jvm)
     alias(libs.plugins.ktor)
     application
 }
 
-group = "dev.rendrap.app.chika"
-version = "1.0.0"
+group = "moe.chika.app"
+
 application {
-    mainClass.set("dev.rendrap.app.chika.ApplicationKt")
+    mainClass.set("moe.chika.app.ApplicationKt")
     applicationDefaultJvmArgs = listOf("-Dio.ktor.development=${extra["io.ktor.development"] ?: "false"}")
 }
 
