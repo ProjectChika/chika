@@ -1,26 +1,26 @@
 [versions]
-activityCompose = "1.9.2"
+activity-compose = "1.9.2"
+android-tools = "31.7.1"
 appcompat = "1.7.0"
-constraintLayout = "2.1.4"
+constraint-layout = "2.1.4"
 coreKtx = "1.13.1"
-desugarJdkLibs = "2.1.2"
-espressoCore = "3.6.1"
+desugar-jdk-libs = "2.1.2"
+espresso-core = "3.6.1"
 gradle = "8.2.2"
 lifecycle = "2.8.2"
 material = "1.12.0"
-testJunit = "1.2.1"
-tools = "31.7.0"
+test-junit = "1.2.1"
 
 [libraries]
-desugarJdkLibs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugarJdkLibs" }
-activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activityCompose" }
-core-ktx = { module = "androidx.core:core-ktx", version.ref = "coreKtx" }
-espresso-core = { module = "androidx.test.espresso:espresso-core", version.ref = "espressoCore" }
-test-junit = { module = "androidx.test.ext:junit", version.ref = "testJunit" }
+activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
+desugarJdkLibs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar-jdk-libs" }
+lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
+lifecycle-viewmodel = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-viewmodel", version.ref = "lifecycle" }
+test-junit = { module = "androidx.test.ext:junit", version.ref = "test-junit" }
 
 # Build Logic Dependencies
 gradlePlugin = { module = "com.android.tools.build:gradle", version.ref = "gradle" }
-tools-common = { module = "com.android.tools:common", version.ref = "tools" }
+tools-common = { module = "com.android.tools:common", version.ref = "android-tools" }
 
 [plugins]
 application = { id = "com.android.application", version.ref = "gradle" }

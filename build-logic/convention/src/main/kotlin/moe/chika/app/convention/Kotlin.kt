@@ -40,13 +40,22 @@ internal fun Project.configureKotlinAndroid(
   }
 }
 
-internal fun Project.configureKotlinJvm() {
+internal fun Project.configureKotlinMultiplatform() {
   extensions.configure<JavaPluginExtension> {
     sourceCompatibility = JAVA_VERSION
     targetCompatibility = JAVA_VERSION
   }
 
   configureKotlin<KotlinMultiplatformExtension>()
+}
+
+internal fun Project.configureKotlinJvm() {
+  extensions.configure<JavaPluginExtension> {
+    sourceCompatibility = JAVA_VERSION
+    targetCompatibility = JAVA_VERSION
+  }
+
+  configureKotlin<KotlinJvmProjectExtension>()
 }
 
 @OptIn(ExperimentalKotlinGradlePluginApi::class)

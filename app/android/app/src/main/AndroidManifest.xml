@@ -7,6 +7,10 @@
     android:label="@string/app_name"
     android:roundIcon="@mipmap/ic_launcher_round"
     android:supportsRtl="true"
+    android:name=".ChikaApplication"
+    android:allowClearUserData="true"
+    android:appCategory="social"
+    android:logo="@mipmap/ic_launcher"
     android:theme="@android:style/Theme.Material.Light.NoActionBar">
     <activity
       android:exported="true"

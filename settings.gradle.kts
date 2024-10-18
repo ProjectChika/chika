@@ -43,14 +43,15 @@ include(
   listOf(
     ":app:android:app",
     ":app:desktop",
-    ":app:ios",
     ":app:web",
   )
 )
 include(
   listOf(
-    ":core:design-system"
+    ":core:common",
+    ":core:design-system",
+    ":core:lang",
+    ":core:model"
   )
 )
 include(":server")
-include(":shared")

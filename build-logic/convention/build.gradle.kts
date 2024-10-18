@@ -66,5 +66,9 @@ gradlePlugin {
       id = "chika.jvm"
       implementationClass = "JvmLibraryConventionPlugin"
     }
+    register("koin") {
+      id = "chika.koin"
+      implementationClass = "KoinConventionPlugin"
+    }
   }
 }

@@ -1,6 +1,7 @@
 
 import moe.chika.app.convention.config.RootConfig.JVM_TARGET
-import moe.chika.app.convention.configureKotlinJvm
+import moe.chika.app.convention.configureKotlinMultiplatform
+import moe.chika.app.convention.extension.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -12,7 +13,9 @@ import org.jetbrains.kotlin.gradle.targets.js.webpack.KotlinWebpackConfig
 class MultiplatformLibraryConventionPlugin : Plugin<Project> {
   @OptIn(ExperimentalWasmDsl::class, ExperimentalKotlinGradlePluginApi::class)
   override fun apply(target: Project) = with(target) {
-    pluginManager.apply("org.jetbrains.kotlin.multiplatform")
+    with(pluginManager) {
+      apply("org.jetbrains.kotlin.multiplatform")
+    }
 
     extensions.configure<KotlinMultiplatformExtension> {
       wasmJs {
@@ -36,13 +39,21 @@ class MultiplatformLibraryConventionPlugin : Plugin<Project> {
         }
       }
 
-      iosX64()
-      iosArm64()
-      iosSimulatorArm64()
+      // Disable iOS for now
+//      iosX64()
+//      iosArm64()
+//      iosSimulatorArm64()
 
       jvm()
 
-      configureKotlinJvm()
+      configureKotlinMultiplatform()
+
+      sourceSets.commonMain.dependencies {
+        val bom = libs.findLibrary("arrow.stack").get()
+        implementation(project.dependencies.platform(bom))
+        implementation(libs.findLibrary("arrow.core").get())
+        implementation(libs.findLibrary("arrow.fx.coroutines").get())
+      }
     }
   }
 }
