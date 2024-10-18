@@ -1,0 +1,17 @@
+ktor:
+  application:
+    modules:
+      - moe.chika.app.server.ApplicationKt.module
+  deployment:
+    host: "0.0.0.0"
+    port: 8080
+database:
+  postgres:
+    host: "aws-0-ap-southeast-1.pooler.supabase.com"
+    port: 6543
+    username: "postgres.zsmmuptzrhetjexhjthk"
+    password: "1B.JCM%88RGG>(YurpGh()Gq7t)K"
+    schema: "postgres"
+jwt:
+  secret: "SuperSecret"
+  issuer: ""
