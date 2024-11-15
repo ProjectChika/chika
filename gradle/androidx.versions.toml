@@ -1,9 +1,9 @@
 [versions]
-activity-compose = "1.9.2"
+activity-compose = "1.9.3"
 android-tools = "31.7.1"
 appcompat = "1.7.0"
 constraint-layout = "2.1.4"
-coreKtx = "1.13.1"
+core-ktx = "1.13.1"
 desugar-jdk-libs = "2.1.2"
 espresso-core = "3.6.1"
 gradle = "8.2.2"
@@ -12,6 +12,7 @@ material = "1.12.0"
 test-junit = "1.2.1"
 
 [libraries]
+core-ktx = { module = "androidx.core:core-ktx", version.ref = "core-ktx" }
 activity-compose = { module = "androidx.activity:activity-compose", version.ref = "activity-compose" }
 desugarJdkLibs = { module = "com.android.tools:desugar_jdk_libs", version.ref = "desugar-jdk-libs" }
 lifecycle-runtime-compose = { group = "org.jetbrains.androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifecycle" }
